@@ -1,3 +1,23 @@
+@import "normalize";
+
 html {
-    font-style: italic;
+}
+
+.recipe {
+  padding: 1em;
+  max-width: 40rem;
+  .bakers-percentages {
+    table {
+      thead {
+        text-align: left;
+      }
+      td, th {
+        padding: 0.5rem;
+      }
+      th {
+        background: lightblue;
+        border-color: white;
+      }
+    }
+  }
 }

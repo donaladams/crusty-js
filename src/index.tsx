@@ -9,9 +9,12 @@ var vermontSourdough = {
     "Rye flour",
     "Water",
     "Salt",
-    "Sourdough starter"
+    "Starter"
   ],
+  totalFlourWeight: 1000,
   overall: {
+    stage: "Overall",
+    percentageOfOverallFlour: 100.0,
     formula: [{
         "ingredient": "Bread flour",
         "percentage": 90.0
@@ -28,7 +31,8 @@ var vermontSourdough = {
     ]
   },
   preferment: {
-    percentageOfOverallFlour: 15.0,
+    stage: "Preferment",
+    percentageOfOverallFlour: 20.0,
     formula: [{
         "ingredient": "Bread flour",
         "percentage": 100.0
@@ -36,7 +40,7 @@ var vermontSourdough = {
         "ingredient": "Water",
         "percentage": 125.0
       }, {
-        "ingredient": "Sourdough Starter",
+        "ingredient": "Starter",
         "percentage": 20.0
       }
     ]

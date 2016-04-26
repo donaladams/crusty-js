@@ -1,4 +1,6 @@
 #!/bin/bash
 node-sass \
   --include-path styles \
+  --include-path node_modules \
+  --include-path "node_modules/normalize.css" \
   styles/main.scss build/main.css
