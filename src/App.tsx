@@ -1,19 +1,7 @@
 import * as React from 'react'
 import {Component} from 'react'
 import {Recipe, RecipeStage, BakersPercentage} from './recipe'
-
-
-function grams(totalFlour:number, percent:number) {
-  return percent / 100.0 * totalFlour;
-}
-
-function formatGrams(grams:number) {
-  if(Math.floor(grams) == grams) {
-    return grams.toFixed(0);
-  } else {
-    return grams.toFixed(2);
-  }
-}
+import {grams, formatGrams} from "./helpers"
 
 const CPercentageRow = (props:{row: BakersPercentage, flourWeight: number}) => (
   <tr className="column">
