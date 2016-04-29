@@ -10,8 +10,8 @@ html {
   width: 100%;
   .bakers-percentages {
     // display: inline-block;
-    float: left;
     padding-right: 10%;
+    display: inline-block;
     table {
       thead {
         text-align: left;
