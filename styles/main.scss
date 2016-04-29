@@ -5,14 +5,24 @@ html {
 
 .recipe {
   padding: 1em;
-  max-width: 40rem;
+  padding-left: 10%;
+  padding-top: 5%;
+  width: 100%;
   .bakers-percentages {
+    // display: inline-block;
+    float: left;
+    padding-right: 10%;
     table {
       thead {
         text-align: left;
       }
       td, th {
         padding: 0.5rem;
+
+      }
+      tr.total-column {
+       background: lightgrey;
+        border-color: white;
       }
       th {
         background: lightblue;
