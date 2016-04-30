@@ -92,9 +92,7 @@ export function calculateFinalMix(recipe:Recipe, prefermentFlourPercentage:numbe
   }
 
   let prefermentPercentage:number = function() {
-    let overallPercentages:number[] = recipe.preferment.formula.map(function(bp:BakersPercentage) {
-      return isStarter(bp) ? 0 : prefermentToOverallPercentage(bp);
-    });
+    let overallPercentages: number[] = recipe.preferment.formula.map(prefermentToOverallPercentage);
     return _.sum(overallPercentages);
   }();
 
