@@ -133,7 +133,6 @@ export class CRecipe extends React.Component<RecipeProps, RecipeState> {
                               flourWeight={this.state.totalFlourWeight}
                               hidePercentages={true}/>
         </div>
-        <CRecipeSteps recipe={this.props.recipe} />
       </div>
     );
   }

@@ -8,13 +8,15 @@
     "develop": "parallel watch-compile server watch-bundle watch-css",
     "compile": "./bin/build-js",
     "watch-compile": "./bin/build-js -w",
-    "watch-bundle": "watchify build/index.js -o build/main.js",
+    "watch-bundle": "watchify build/index.js -o build/crusty.min.js",
     "build-css": "./bin/build-css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "server": "http-server",
     "postinstall": "typings install",
     "pretest": "npm run compile",
-    "test": "mocha test/index.js"
+    "test": "mocha test/index.js",
+    "process-js": "browserify build/index.js | uglifyjs -o build/crusty.min.js",
+    "dist": "npm run build-css & npm run compile & npm run process-js"
   },
   "author": "William Dónal Adams",
   "license": "MIT",
@@ -31,6 +33,7 @@
     "tsc": "^1.7",
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
+    "uglifyjs": "^2.4.10",
     "watchify": "^3.7.0"
   },
   "dependencies": {
