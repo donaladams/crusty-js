@@ -11,14 +11,23 @@ export interface RecipeStage {
   formula: BakersPercentage[];
 }
 
+export interface RecipeStep {
+  num: number;
+  title: string;
+  text: string;
+  duration: number;
+  type: string;
+}
+
 export interface Recipe {
   name: string;
   ingredients: string[];
   totalFlourWeight: number;
   overall: RecipeStage;
   preferment: RecipeStage;
-  flours:string[],
-  starters:string[]
+  flours: string[];
+  starters: string[];
+  steps: RecipeStep[];
 }
 
 export function grams(totalFlour: number, percent: number): number {

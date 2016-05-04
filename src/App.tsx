@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {Component} from 'react'
-import {Recipe, RecipeStage, BakersPercentage} from './recipe'
+import {Recipe, RecipeStage, BakersPercentage, RecipeStep} from './recipe'
 import {grams, formatNumber, calculateFinalMix, totalPercentagesInStage, totalGramsInStage} from './recipe'
 
 
@@ -43,6 +43,25 @@ const CBakersPercentages = (props:{stage:RecipeStage, flourWeight:number}) => (
         <CTotalRow stage={props.stage} flourWeight={props.flourWeight} />
       </tbody>
     </table>
+  </div>
+)
+
+
+const CRecipeStep = (props: {step:RecipeStep}) => (
+  <div className="recipe-step">
+    <h2>
+      <span className="recipe-step-number">{props.step.num}. </span>
+      {props.step.title}
+    </h2>
+    <p>{props.step.text}</p>
+  </div>
+)
+
+const CRecipeSteps = (props: {recipe: Recipe}) => (
+  <div className="recipe-steps">
+    {props.recipe.steps.map(function(step:RecipeStep) {
+      return <CRecipeStep key={step.num} step={step} />
+    })}
   </div>
 )
 
@@ -101,6 +120,8 @@ export class CRecipe extends React.Component<RecipeProps, RecipeState> {
         />
         <CBakersPercentages stage={calculateFinalMix(this.props.recipe, this.state.prefermentFlourPercentage)}
                             flourWeight={this.state.totalFlourWeight}/>
+
+        <CRecipeSteps recipe={this.props.recipe} />
       </div>
     );
   }
