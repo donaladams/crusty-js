@@ -3,31 +3,48 @@
 html {
 }
 
+.hidden {
+  display: none;
+}
+
 .recipe {
   border-bottom: 2px solid lightblue;
   padding: 1em;
   padding-left: 10%;
   padding-top: 5%;
-  width: 100%;
-  .bakers-percentages {
-    // display: inline-block;
-    padding-right: 10%;
-    display: inline-block;
-    table {
-      thead {
-        text-align: left;
-      }
-      td, th {
-        padding: 0.5rem;
+  .bakers-percentages-collection {
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 80%;
+    padding-bottom: 1%;
+    .bakers-percentages {
+      table {
+        thead {
+          text-align: left;
+        }
+        td, th {
+          padding: 0.5rem;
 
+        }
+        tr.total-column {
+          background: lightgrey;
+          border-color: white;
+        }
+        th {
+          background: lightblue;
+          border-color: white;
+        }
       }
-      tr.total-column {
-       background: lightgrey;
-        border-color: white;
-      }
-      th {
-        background: lightblue;
-        border-color: white;
+    }
+  }
+  .recipe-steps {
+    .recipe-step {
+      h2 {
+        font-size: 1.2em;
       }
     }
   }
