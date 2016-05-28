@@ -306,3 +306,53 @@ export var HazelnutFigLevain = {
   ]
 }
 
+
+export var Ciabatta = {
+    name: "Ciabatta",
+    ingredients: [
+        "Bread flour",
+        "Water",
+        "Salt",
+        "Yeast"
+    ],
+    flours: [
+        "Bread flour",
+    ],
+    starters: [],
+    totalFlourWeight: 1000,
+    overall: {
+        stage: "Overall",
+        percentageOfOverallFlour: 100.0,
+        formula: [{
+            "ingredient": "Bread flour",
+            "percentage": 100.0
+        }, {
+            "ingredient": "Water",
+            "percentage": 73.0
+        }, {
+            "ingredient": "Salt",
+            "percentage": 2
+        }, {
+          "ingredient": "Yeast",
+          "percentage": 1.2
+        }
+        ]
+    },
+    preferment: {
+        stage: "Biga",
+        percentageOfOverallFlour: 20.0,
+        formula: [{
+            "ingredient": "Bread flour",
+            "percentage": 100.0
+        }, {
+            "ingredient": "Water",
+            "percentage": 60.0
+        }, {
+            "ingredient": "Yeast",
+            "percentage": 0.2
+        }
+        ]
+    }, steps: [
+    ]
+}
+
