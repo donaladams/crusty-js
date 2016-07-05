@@ -90,9 +90,13 @@ interface RecipeState {
 export class CRecipe extends React.Component<RecipeProps, RecipeState> {
   constructor(props:RecipeProps) {
     super(props);
+
+    var flourInPreferment = this.props.recipe.preferment ?
+      this.props.recipe.preferment.percentageOfOverallFlour : 0;
+
     this.state = {
       totalFlourWeight: this.props.recipe.totalFlourWeight,
-      prefermentFlourPercentage: this.props.recipe.preferment.percentageOfOverallFlour
+      prefermentFlourPercentage: flourInPreferment
     };
     this.onFlourWeightChange = this.onFlourWeightChange.bind(this);
     this.onPrefermentFlourPercentageChange = this.onPrefermentFlourPercentageChange.bind(this);
@@ -111,6 +115,21 @@ export class CRecipe extends React.Component<RecipeProps, RecipeState> {
     });
   }
   render() {
+    var preferment = this.props.recipe.preferment;
+    var preferementHeader;
+    var prefermentPercentages;
+    var finalMix;
+    if(preferment) {
+      preferementHeader = <p>Preferment Flour Percentage (%): {this.props.recipe.preferment.percentageOfOverallFlour}</p>;
+
+      prefermentPercentages = <CBakersPercentages stage={this.props.recipe.preferment}
+          flourWeight={grams(this.state.totalFlourWeight, this.state.prefermentFlourPercentage)} />
+
+      finalMix = <CBakersPercentages stage={calculateFinalMix(this.props.recipe, this.state.prefermentFlourPercentage)}
+          flourWeight={this.state.totalFlourWeight}
+          hidePercentages={true} />
+    }
+
     return (
       <div className="recipe">
         <h1>{this.props.recipe.name}</h1>
@@ -121,17 +140,12 @@ export class CRecipe extends React.Component<RecipeProps, RecipeState> {
                  defaultValue={this.props.recipe.totalFlourWeight}
                  onChange={this.onFlourWeightChange} />
         </p>
-        <p>Preferment Flour Percentage (%): {this.props.recipe.preferment.percentageOfOverallFlour}</p>
+        {preferementHeader}
         <div className="bakers-percentages-collection">
           <CBakersPercentages stage={this.props.recipe.overall}
                               flourWeight={this.state.totalFlourWeight}/>
-
-          <CBakersPercentages stage={this.props.recipe.preferment}
-                              flourWeight={grams(this.state.totalFlourWeight, this.state.prefermentFlourPercentage)}
-          />
-          <CBakersPercentages stage={calculateFinalMix(this.props.recipe, this.state.prefermentFlourPercentage)}
-                              flourWeight={this.state.totalFlourWeight}
-                              hidePercentages={true}/>
+          {prefermentPercentages}
+          {finalMix}
         </div>
       </div>
     );

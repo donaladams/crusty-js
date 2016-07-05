@@ -24,7 +24,7 @@ export interface Recipe {
   ingredients: string[];
   totalFlourWeight: number;
   overall: RecipeStage;
-  preferment: RecipeStage;
+  preferment?: RecipeStage;
   flours: string[];
   starters: string[];
   steps: RecipeStep[];

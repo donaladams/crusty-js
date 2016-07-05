@@ -352,7 +352,168 @@ export var Ciabatta = {
             "percentage": 0.2
         }
         ]
-    }, steps: [
-    ]
+    }, steps: []
+}
+
+
+export var CarawayRye = {
+    name: "40 percent Caraway Rye",
+    ingredients: [
+        "Bread flour",
+        "Rye flour",
+        "Water",
+        "Salt",
+        "Starter",
+        "Caraway seeds",
+        "Yeast"
+    ],
+    flours: [
+        "Bread flour",
+        "Rye flour"
+    ],
+    starters: [
+        "Starter"
+    ],
+    totalFlourWeight: 1000,
+    overall: {
+        stage: "Overall",
+        percentageOfOverallFlour: 100.0,
+        formula: [{
+            "ingredient": "Bread flour",
+            "percentage": 60.0
+        }, {
+                "ingredient": "Rye flour",
+                "percentage": 40.0
+            }, {
+                "ingredient": "Water",
+                "percentage": 68.0
+            }, {
+                "ingredient": "Salt",
+                "percentage": 1.8
+            }, {
+                "ingredient": "Caraway seeds",
+                "percentage": 1.75
+            }, {
+                "ingredient": "Yeast",
+                "percentage": 1.25
+            }, {
+                "ingredient": "Starter",
+                "percentage": 0.5
+            },
+        ]
+    },
+    preferment: {
+        stage: "Sourdough",
+        percentageOfOverallFlour: 40.0,
+        formula: [{
+            "ingredient": "Rye flour",
+            "percentage": 100.0
+        }, {
+                "ingredient": "Water",
+                "percentage": 83.0
+            }, {
+                "ingredient": "Starter",
+                "percentage": 5.0
+            }
+        ]
+    },
+    steps: []
+}
+
+export var OatPorridge = {
+    name: "Oat Porridge Sourdough",
+    ingredients: [
+        "Bread flour",
+        "Wholewheat flour",
+        "Water",
+        "Salt",
+        "Starter",
+        "Porridge"
+    ],
+    flours: [
+        "Bread flour",
+        "Wholewheat flour"
+    ],
+    starters: [
+        "Starter"
+    ],
+    totalFlourWeight: 1000,
+    overall: {
+        stage: "Overall",
+        percentageOfOverallFlour: 100.0,
+        formula: [{
+            "ingredient": "Bread flour",
+            "percentage": 70.0
+        }, {
+                "ingredient": "Wholewheat flour",
+                "percentage": 30.0
+            }, {
+                "ingredient": "Water",
+                "percentage": 75.0
+            }, {
+                "ingredient": "Salt",
+                "percentage": 2.5
+            }, {
+                "ingredient": "Starter",
+                "percentage": 3.5
+            }, {
+              "ingredient": "Porridge",
+              "percentage": 72
+            }
+        ]
+    }, preferment: {
+        stage: "Levain",
+        percentageOfOverallFlour: 8.5,
+        formula: [{
+            "ingredient": "Bread flour",
+            "percentage": 50.0
+        }, {
+                "ingredient": "Wholewheat flour",
+                "percentage": 50.0
+            }, {
+                "ingredient": "Water",
+                "percentage": 100.0
+            }, {
+                "ingredient": "Starter",
+                "percentage": 40.0
+            }
+        ]
+    },
+    steps: []
+}
+
+
+export var BaguettesDeTradition = {
+    name: "Baguettes de Tradition",
+    ingredients: [
+        "Bread flour",
+        "Water",
+        "Salt",
+        "Yeast"
+    ],
+    flours: [
+        "Bread flour"
+    ],
+    starters: [],
+    totalFlourWeight: 1000,
+    overall: {
+        stage: "Overall",
+        percentageOfOverallFlour: 100.0,
+        formula: [{
+            "ingredient": "Bread flour",
+            "percentage": 100.0
+        }, {
+                "ingredient": "Water",
+                "percentage": 76.0
+            }, {
+                "ingredient": "Salt",
+                "percentage": 1.8
+            }, {
+                "ingredient": "Yeast",
+                "percentage": .75
+            }
+        ]
+    },
+    steps: []
 }
 
