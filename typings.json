@@ -1,10 +1,11 @@
 {
   "name": "crusty-js",
   "version": false,
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "registry:npm/lodash#4.0.0+20160723033700",
+    "react": "registry:npm/react#15.0.1+20160601175240",
+    "react-dom": "registry:npm/react-dom#15.0.1+20160826174104"
+  },
   "ambientDependencies": {
-    "lodash": "registry:dt/lodash#3.10.0+20160330154726",
-    "react": "registry:dt/react#0.14.0+20160412154040",
-    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040"
   }
 }
