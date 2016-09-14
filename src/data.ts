@@ -517,3 +517,53 @@ export var BaguettesDeTradition = {
     steps: []
 }
 
+export var SoftButterRolls = {
+    name: "Soft Butter Rolls",
+    ingredients: [
+        "Bread flour",
+        "Water",
+        "Eggs",
+        "Butter",
+        "Dry Milk",
+        "Sugar",
+        "Salt",
+        "Yeast"
+    ],
+    flours: [
+        "Bread flour"
+    ],
+    starters: [],
+    totalFlourWeight: 1000,
+    overall: {
+        stage: "Overall",
+        percentageOfOverallFlour: 100.0,
+        formula: [{
+            "ingredient": "Bread flour",
+            "percentage": 100.0
+        }, {
+                "ingredient": "Water",
+                "percentage": 46.0
+            }, {
+                "ingredient": "Eggs",
+                "percentage": 10
+            }, {
+                "ingredient": "Butter",
+                "percentage": 8
+            },  {
+                "ingredient": "Sugar",
+                "percentage": 6
+            }, {
+                "ingredient": "Dry milk",
+                "percentage": 5
+            }, {
+                "ingredient": "Salt",
+                "percentage": 2
+            }, {
+                "ingredient": "Yeast",
+                "percentage": 5
+            }
+        ]
+    },
+    steps: []
+}
+
