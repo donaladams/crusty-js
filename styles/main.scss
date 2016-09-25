@@ -1,17 +1,17 @@
 @import "normalize";
 
-html {
-}
-
 .hidden {
   display: none;
 }
 
+$primary-colour: lightblue;
+$structural-border: 1px solid $primary-colour;
+$generic-spacing: 20px;
+$sidebar-width: 250px;
+
 .recipe {
-  border-bottom: 2px solid lightblue;
   padding: 1em;
   padding-left: 10%;
-  padding-top: 5%;
   padding-bottom: 5%;
   .bakers-percentages-collection {
     display: flex;
@@ -32,11 +32,11 @@ html {
 
         }
         tr.total-column {
-          background: lightgrey;
+          background: $primary-colour;
           border-color: white;
         }
         th {
-          background: lightblue;
+          background: $primary-colour;
           border-color: white;
         }
       }
@@ -47,6 +47,49 @@ html {
       h2 {
         font-size: 1.2em;
       }
+    }
+  }
+}
+
+.recipe-page {
+  display: flex;
+  justify-content: flex-start;
+  .recipe-chooser {
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $sidebar-width;
+    border-right: $structural-border;
+    h2 {
+      padding: $generic-spacing;
+      // border-bottom: $structural-border;
+      margin: 0 auto;
+    }
+    ul {
+      position: relative;
+      list-style: none;
+      width: 100%;
+      padding: 0;
+      margin: 0 auto;
+      li {
+        padding: $generic-spacing;
+        &:hover {
+          background-color: $primary-colour;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .recipe-panel {
+    position: absolute;
+    top: 0;
+    left: $sidebar-width;
+    right: 0;
+    bottom: 0;
+    .active-recipe {
+      position: relative;
     }
   }
 }

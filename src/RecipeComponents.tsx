@@ -69,9 +69,9 @@ const CRecipeStep = (props: {step:RecipeStep}) => (
 const CRecipeSteps = (props: {recipe: Recipe}) => (
   <div className="recipe-steps">
     <h2>Steps</h2>
-    {props.recipe.steps.map(function(step:RecipeStep) {
-      return <CRecipeStep key={step.num} step={step} />
-    })}
+    {props.recipe.steps.map(step => (
+      <CRecipeStep key={step.num} step={step} />
+    ))}
   </div>
 )
 
@@ -100,7 +100,6 @@ export class CRecipe extends React.Component<RecipeProps, RecipeState> {
     };
     this.onFlourWeightChange = this.onFlourWeightChange.bind(this);
     this.onPrefermentFlourPercentageChange = this.onPrefermentFlourPercentageChange.bind(this);
-
   }
   onFlourWeightChange(event) {
     this.setState({
@@ -116,9 +115,9 @@ export class CRecipe extends React.Component<RecipeProps, RecipeState> {
   }
   render() {
     var preferment = this.props.recipe.preferment;
-    var preferementHeader;
-    var prefermentPercentages;
-    var finalMix;
+    var preferementHeader: JSX.Element;
+    var prefermentPercentages: JSX.Element;
+    var finalMix: JSX.Element;
     if(preferment) {
       preferementHeader = <p>Preferment Flour Percentage (%): {this.props.recipe.preferment.percentageOfOverallFlour}</p>;
 
@@ -135,7 +134,7 @@ export class CRecipe extends React.Component<RecipeProps, RecipeState> {
         <h1>{this.props.recipe.name}</h1>
         <p> Ingredients: {this.props.recipe.ingredients.join(", ")}</p>
         <p>
-          <label for="totalFlourWeight">Total Flour Weight (g):</label>
+          <label htmlFor="totalFlourWeight">Total Flour Weight (g):</label>
           <input id="totalFlourWeight" type="number"
                  defaultValue={this.props.recipe.totalFlourWeight}
                  onChange={this.onFlourWeightChange} />
@@ -151,3 +150,4 @@ export class CRecipe extends React.Component<RecipeProps, RecipeState> {
     );
   }
 }
+
